@@ -2,9 +2,7 @@ from calendar import c
 import string
 from tokenize import String
 
-first_name = "guilherme"
-
-list_Fname = list(first_name)
+nome1 = "guilherme"
   
 
 dicionario = {"q":1, "w":2, "e":3, "r":4, "t":5, "y":6, "u":7, "i":8, "o":9, "p":10, "á":11, "ã":12,
@@ -15,6 +13,12 @@ dicionario = {"q":1, "w":2, "e":3, "r":4, "t":5, "y":6, "u":7, "i":8, "o":9, "p"
 for l in dicionario:
     nome1 = nome1.replace(l, str(dicionario[l]))
 
+nome1 = int(nome1)
+print(nome1)
+
+n = 378713423 #valor que deveria ser obtido com o primeiro nome
+resto = nome1 % 3
+print(resto)
 
 
 ## entrada de Linhas de DNA
@@ -35,18 +39,3 @@ for i in range(10):
     for j in range(10):
         print(matriz[i][j])
     print()
-
-nome1 = int(nome1)
-print(nome1)
-
-n = 378713423 #valor que deveria ser obtido com o primeiro nome
-resto = nome1 % 3
-print(resto)
-
-
-
-
-
-#n = 378713423  #Nome: Guilherme
-#resto = n % 3
-#print(resto)
