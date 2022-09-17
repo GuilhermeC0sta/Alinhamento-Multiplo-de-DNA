@@ -56,7 +56,7 @@ print(f'resto3: {resto3}')
 #0: os gaps juntos
 #1: os gaps separados
 
-<<<<<<< HEAD
+
 
 
 #n = 378713423 #valor que deveria ser obtido com o primeiro nome
