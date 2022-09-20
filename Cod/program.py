@@ -33,15 +33,19 @@ elif resto1 == 1:
     delta = -1
 
 elif resto1 == 2:
-    alpha = 2
+    alpha = 1
     beta = 0
     delta = -2
 
+print(f'alpha: {alpha}')
+print(f'beta: {beta}')
+print(f'delta: {delta}')
+
 nome2 = converte(nome2)
 nome2 = int(nome2)              #O último nome
-resto2 = nome2 % 3
+pref_gap = nome2 % 3
 print(f'nome2: {nome2}')
-print(f'resto2: {resto2}')
+print(f'pref_gap: {pref_gap}')
 
 #0: os gaps devem ocorrer preferencialmente no início da sequência
 #1: os gaps devem ocorrer preferencialmente no final da sequência
@@ -49,9 +53,9 @@ print(f'resto2: {resto2}')
 
 nome3 = converte(nome3)
 nome3 = int(nome3)             #O nome do meio
-resto3 = nome3 % 2
+gap_js = nome3 % 2
 print(f'nome3: {nome3}')
-print(f'resto3: {resto3}')
+print(f'gap_js: {gap_js}')
 
 #0: os gaps juntos
 #1: os gaps separados
@@ -62,12 +66,6 @@ print(f'resto3: {resto3}')
 #n = 378713423 #valor que deveria ser obtido com o primeiro nome
 #resto = 76411 % 3
 #print(resto)
-
-
-
-n = 378713423 #valor que deveria ser obtido com o primeiro nome
-resto = nome1 % 3
-print(resto)
 
 
 ## entrada de Linhas de DNA
