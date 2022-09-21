@@ -88,7 +88,10 @@ for i in range(10):
     print()
 
 
+# Depois de receber as sequencias
 
-# Tentando o Algoritmo Needleman-Wunsch
-#def alg_NW(matriz[i][j]):
- #   for k in range(m):
+# Tentando o Algoritmo Needleman-Wunsch para alinhamento progressivo
+m = len()
+def alg_NW(x, y):
+    for k in range(1, m + 1):
+        matriz[i][0] = i
