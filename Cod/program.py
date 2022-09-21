@@ -79,7 +79,7 @@ for j in range(lin):
     if (len(a[j])) == 10:#no lugar do 10 é100      
         matriz.append(list(a[j]))
 
-
+print(a)
 
 
 for i in range(10):
@@ -87,3 +87,8 @@ for i in range(10):
         print(matriz[i][j])
     print()
 
+
+
+# Tentando o Algoritmo Needleman-Wunsch
+#def alg_NW(matriz[i][j]):
+ #   for k in range(m):
