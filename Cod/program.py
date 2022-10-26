@@ -1,6 +1,7 @@
 from calendar import c
 import string
 from tokenize import String
+import numpy as np
 
 nome1 = "guilherme"
 nome2 = "costa"
@@ -68,24 +69,71 @@ print(f'gap_js: {gap_js}')
 #print(resto)
 
 
-## entrada de Linhas de DNA
-lin = 10
-linha = []
-matriz = []
-print("Escreva uma linha de DNA e dê enter para escrever a próxima: ")
-a = []
-for j in range(lin):
-    a.append(str(input()))
-    if (len(a[j])) == 10:#no lugar do 10 é100      
-        matriz.append(list(a[j]))
+#Acho que desse modo ta melhor
+#Obs: lembrar que esses valores sao para teste
 
-print(a)
+matrix = []
 
+print("Entrada e enter:")
 
-for i in range(10):
-    for j in range(10):
-        print(matriz[i][j])
+for i in range(3):          # loop para linhas                 seriam 10 linhas
+    a = []
+    for j in range(3):      # loop para colunas                 seriam umas 120
+         a.append(str(input()))
+    matrix.append(a)
+
+#Print da matriz
+
+for i in range(3):                                               #10
+
+    for j in range(3):                                           #10 
+
+        print(matrix[i][j], end = " ")
+
     print()
+
+#testando esse metodo
+print(matrix[1][1])
+if(matrix[1][1] == matrix[0][0]):
+    print("Sao iguais")
+
+
+
+
+
+#tentativa/opcao 2 de receber a entrada
+#array = [[]]
+#contador = 10
+#for array in range(contador):
+#    for array in range(0, 119):
+#        dado = input("Entrada de dados:", )
+
+
+
+
+
+
+
+
+#opcao 1 de receber a entrada
+## entrada de Linhas de DNA
+#lin = 3 #são 10
+#linha = []
+#matriz = []
+#print("Escreva uma linha de DNA e de enter para escrever a proxima: ")
+#a = []
+#for j in range(lin):
+#    a.append(str(input()))
+#    if (len(a[j])) == 10:#no lugar do 10 é100      
+#        matriz.append(list(a[j]))
+
+#print(a)
+#print(a[0, 5])
+
+#for i in range(10):
+#    for j in range(10):
+#        print(matriz[i][j])
+#    print()
 
 
 # Depois de receber as sequencias
