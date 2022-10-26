@@ -62,13 +62,6 @@ print(f'gap_js: {gap_js}')
 #1: os gaps separados
 
 
-
-
-#n = 378713423 #valor que deveria ser obtido com o primeiro nome
-#resto = 76411 % 3
-#print(resto)
-
-
 #Acho que desse modo ta melhor
 #Obs: lembrar que esses valores sao para teste
 
