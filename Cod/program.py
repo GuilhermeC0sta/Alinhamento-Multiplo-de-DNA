@@ -71,15 +71,14 @@ print("Entrada e enter:")
 
 for i in range(3):          # loop para linhas                 seriam 10 linhas
     a = []
-    for j in range(3):      # loop para colunas                 seriam umas 120
+    for j in range(5):      # loop para colunas                 seriam umas 120
          a.append(str(input()))
     matrix.append(a)
 
 #Print da matriz
-
 for i in range(3):                                               #10
 
-    for j in range(3):                                           #10 
+    for j in range(5):                                           #119 ou 120 
 
         print(matrix[i][j], end = " ")
 
@@ -90,8 +89,24 @@ print(matrix[1][1])
 if(matrix[1][1] == matrix[0][0]):
     print("Sao iguais")
 
+# alpha = 1 /// beta = 0 /// delta = -2
+#1: os gaps devem ocorrer preferencialmente no final da sequência
+#1: os gaps separados
 
 
+
+#Funcao em que se compara o score da matriz primeiramente alinhada com o score de uma outra matriz alinhada de um modo diferente
+#Procura o maior score
+##def compara_scores(M, S):
+
+
+       #Fazer uma funcao para calcular o score da matriz, sem realizar alinhamento
+
+
+i = 0
+j = 0
+while(matrix[i][j] != matrix[3][5]):#seria matrix[10][119]
+    while(matrix[i][j] ):
 
 
 #tentativa/opcao 2 de receber a entrada
@@ -136,7 +151,6 @@ if(matrix[1][1] == matrix[0][0]):
 #def alg_NW(x, y):
  #   for k in range(1, m + 1):
   #      matriz[i][0] = i
-
 
 
 
