@@ -1,7 +1,6 @@
-from calendar import c
-import string
-from tokenize import String
-import numpy as np
+from Bio import pairwise2
+from Bio.pairwise2 import format_alignment 
+from Bio.Seq import Seq
 
 nome1 = "guilherme"
 nome2 = "costa"
@@ -20,8 +19,6 @@ def converte(x):
 nome1 = converte(nome1)     #O primeiro nome
 nome1 = int(nome1)
 resto1 = nome1 % 3
-print(f'nome1: {nome1}')
-print(f'resto1: {resto1}')
 
 if resto1 == 0:
     alpha = 1
@@ -45,112 +42,71 @@ print(f'delta: {delta}')
 nome2 = converte(nome2)
 nome2 = int(nome2)              #O último nome
 pref_gap = nome2 % 3
-print(f'nome2: {nome2}')
-print(f'pref_gap: {pref_gap}')
-
-#0: os gaps devem ocorrer preferencialmente no início da sequência
-#1: os gaps devem ocorrer preferencialmente no final da sequência
-#2: os gaps devem ocorrer preferencialmente no meio da sequência
 
 nome3 = converte(nome3)
 nome3 = int(nome3)             #O nome do meio
 gap_js = nome3 % 2
-print(f'nome3: {nome3}')
-print(f'gap_js: {gap_js}')
 
-#0: os gaps juntos
-#1: os gaps separados
-
-
-#Acho que desse modo ta melhor
 #Obs: lembrar que esses valores sao para teste
 
 matrix = []
-
 print("Entrada e enter:")
-
-for i in range(3):          # loop para linhas                 seriam 10 linhas
+for i in range(1):          # loop para linhas                 
     a = []
-    for j in range(5):      # loop para colunas                 seriam umas 120
+    for j in range(3):      # loop para colunas               
          a.append(str(input()))
     matrix.append(a)
 
-#Print da matriz
-for i in range(3):                                               #10
+seq1 = matrix[0][0]
+seq2 = matrix[0][1]
+seq3 = matrix[0][2]
+seqt = []
+seqt = [seq1, seq2, seq3]
 
-    for j in range(5):                                           #119 ou 120 
+score = 0
+scoreaux = 0
+count1 = 0
+count2 = 0
 
-        print(matrix[i][j], end = " ")
+n = 3     # numero de sequencias
+k = 0
+while n > 0:
+    if n == 3:# eh reduzido 0.5 do score a cada gap consecutivo, ou seja, as sequencias com gaps separados podem ter maior score, assim cumprindo a condicao de que os gaps sejam separados
+        alignments = pairwise2.align.globalms(seqt[k], seqt[k + 1], alpha, beta, delta, -0.5)
+        for alignment in alignments:
+            if count1 == 0:
+                score = alignment.score
+                count1 = count1 + 1
+            else:
+                if alignment.score >= score:
+                    seqt[k] = alignment.seqA
+                    seqt[k + 1] = alignment.seqB
+                    score = alignment.score
+        n = n - 2
+        k = k + 1
+    else:
+        alignments = pairwise2.align.globalms(seqt[k], seqt[k + 1], alpha, beta, delta, -0.5)        
+        for alignment in alignments: 
+            if count2 == 0:
+                scoreaux = alignment.score
+                count2 = count2 + 1
+            else:    
+                if alignment.score >= scoreaux:   
+                    seqt[k] = alignment.seqA
+                    seqt[k + 1] = alignment.seqB
+                    scoreaux = alignment.score    
+        n = n - 2
+        k = k + 1
 
-    print()
-
-#testando esse metodo
-print(matrix[1][1])
-if(matrix[1][1] == matrix[0][0]):
-    print("Sao iguais")
-
-# alpha = 1 /// beta = 0 /// delta = -2
-#1: os gaps devem ocorrer preferencialmente no final da sequência
-#1: os gaps separados
-
-
-
-#Funcao em que se compara o score da matriz primeiramente alinhada com o score de uma outra matriz alinhada de um modo diferente
-#Procura o maior score
-##def compara_scores(M, S):
-
-
-       #Fazer uma funcao para calcular o score da matriz, sem realizar alinhamento
-
-
-i = 0
-j = 0
-while(matrix[i][j] != matrix[3][5]):#seria matrix[10][119]
-    while(matrix[i][j] ):
-
-
-#tentativa/opcao 2 de receber a entrada
-#array = [[]]
-#contador = 10
-#for array in range(contador):
-#    for array in range(0, 119):
-#        dado = input("Entrada de dados:", )
-
-
-
-
-
-
-
-
-#opcao 1 de receber a entrada
-## entrada de Linhas de DNA
-#lin = 3 #são 10
-#linha = []
-#matriz = []
-#print("Escreva uma linha de DNA e de enter para escrever a proxima: ")
-#a = []
-#for j in range(lin):
-#    a.append(str(input()))
-#    if (len(a[j])) == 10:#no lugar do 10 é100      
-#        matriz.append(list(a[j]))
-
-#print(a)
-#print(a[0, 5])
-
-#for i in range(10):
-#    for j in range(10):
-#        print(matriz[i][j])
-#    print()
+print("-----------------------------------------")
+print(f'Sequencia final: {seqt[0]}')
+print(f'Sequencia final: {seqt[1]}')
+print(f'Sequencia final: {seqt[2]}')
+score_total = score + scoreaux
+print(f'Score total = {score_total}')
 
 
-# Depois de receber as sequencias
 
-# Tentando o Algoritmo Needleman-Wunsch para alinhamento progressivo
-#m = len()
-#def alg_NW(x, y):
- #   for k in range(1, m + 1):
-  #      matriz[i][0] = i
 
 
 
