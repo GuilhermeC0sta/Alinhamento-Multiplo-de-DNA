@@ -104,9 +104,3 @@ print(f'Sequencia final: {seqt[1]}')
 print(f'Sequencia final: {seqt[2]}')
 score_total = score + scoreaux
 print(f'Score total = {score_total}')
-
-
-
-
-
-
