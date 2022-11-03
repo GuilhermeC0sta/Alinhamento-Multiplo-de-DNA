@@ -1,3 +1,4 @@
+# Necessaria a instalacao do biopython (pip install biopython)
 from Bio import pairwise2
 from Bio.pairwise2 import format_alignment 
 from Bio.Seq import Seq
