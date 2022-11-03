@@ -75,6 +75,8 @@ while n > 0:
         alignments = pairwise2.align.globalms(seqt[k], seqt[k + 1], alpha, beta, delta, -0.5)
         for alignment in alignments:
             if count1 == 0:
+                seqt[k] = alignment.seqA
+                seqt[k + 1] = alignment.seqB
                 score = alignment.score
                 count1 = count1 + 1
             else:
@@ -88,6 +90,8 @@ while n > 0:
         alignments = pairwise2.align.globalms(seqt[k], seqt[k + 1], alpha, beta, delta, -0.5)        
         for alignment in alignments: 
             if count2 == 0:
+                seqt[k] = alignment.seqA
+                seqt[k + 1] = alignment.seqB
                 scoreaux = alignment.score
                 count2 = count2 + 1
             else:    
