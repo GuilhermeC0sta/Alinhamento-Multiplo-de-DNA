@@ -38,9 +38,7 @@ def alinhamento(seqt, numseq):
         beta = 0
         delta = -2
 
-    print(f'alpha: {alpha}')
-    print(f'beta: {beta}')
-    print(f'delta: {delta}')
+    
 
     nome2 = converte(nome2)
     nome2 = int(nome2)              #O último nome
@@ -92,5 +90,6 @@ def alinhamento(seqt, numseq):
             n = n - 2
             k = k + 1
             scoretotal = scoretotal + alignment.score
+    scoretotal = "Score Total: " + str(scoretotal)        
     seqt.append(scoretotal)
     return seqt
