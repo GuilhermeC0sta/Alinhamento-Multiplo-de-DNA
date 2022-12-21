@@ -1,3 +1,7 @@
+#######################################################################
+# Necessaria a instalacao do PySimpleGUI (pip install pysimplegui)
+# Este é o arquivo principal
+
 import PySimpleGUI as sg
 from alinhamento_func import alinhamento
 from background_tk import background
